@@ -51,12 +51,99 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-2 align-self-center">
-                    <a href="#reserve" class="btn nav-link btn-sm btn-warning btn-block text-white" role="button" data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+852 12345678</strong>" data-placement="bottom">Reserve Table</a>
+                    <a href="#reserve" class="btn nav-link btn-sm btn-warning btn-block text-white" role="button" data-toggle="modal" data-target="#reservationModal">Reserve Table</a>
                 </div>
             </div>
         </div>
     </header>
     <div class="container">
+        <div id="loginModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="email">Email</label>
+                                    <input class="form-control form-control-sm mr-1" type="text" name="email" id="email" placeholder="Enter email">
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="password">Email</label>
+                                    <input class="form-control form-control-sm mr-1" type="password" name="password" id="password" placeholder="Password">
+                                </div>
+                                <div class="col-sm-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label" for="password">Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="reservationModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Reserve a Table</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group row">
+                                <label for="guests" class="col-sm-3 form-control-feedback">Number of Guests</label>
+                                <div class="col-sm-8">
+                                    <input type="radio" name="guests" id="guests"> 1
+                                    <input type="radio" name="guests" id="guests"> 2
+                                    <input type="radio" name="guests" id="guests"> 3
+                                    <input type="radio" name="guests" id="guests"> 4
+                                    <input type="radio" name="guests" id="guests"> 5
+                                    <input type="radio" name="guests" id="guests"> 6
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="dateandtime" class="col-sm-3 form-control-feedback">Section</label>
+                                <div class="col-sm-8 btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-sm btn-success active">
+                                            <input type="radio" name="section" id="nonsmoking" autocomplete="off" checked> Non-Smoking
+                                            </label>
+                                    <label class="btn btn-sm btn-danger">
+                                            <input type="radio" name="section" id="smoking" autocomplete="off"> Smoking
+                                        </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="dateandtime" class="col-sm-3 form-control-feedback">Date and Time</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="date" id="date" placeholder="Date">
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="time" id="time" placeholder="Time">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="reservebutton" class="col-sm-3 form-control-feedback"></label>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row row-content">
             <div class="col">
                 <div id="mycarousel" class="carousel slide" data-ride="carousel">
@@ -137,43 +224,6 @@
                 </div>
             </div>
         </div>
-        <div class="row row-content">
-            <div class="col-12 col-sm-8 offset-sm-2">
-                <div class="card">
-                    <h3 class="card-header bg-warning text-white" id="reserve">Reserve a Table</h3>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group row">
-                                <label for="guests" class="col-sm-3 form-control-feedback">Number of Guests</label>
-                                <div class="col-sm-8">
-                                    <input type="radio" name="guests" id="guests"> 1
-                                    <input type="radio" name="guests" id="guests"> 2
-                                    <input type="radio" name="guests" id="guests"> 3
-                                    <input type="radio" name="guests" id="guests"> 4
-                                    <input type="radio" name="guests" id="guests"> 5
-                                    <input type="radio" name="guests" id="guests"> 6
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="dateandtime" class="col-sm-3 form-control-feedback">Date and Time</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="date" id="date" placeholder="Date">
-                                </div>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="time" id="time" placeholder="Time">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="reservebutton" class="col-sm-3 form-control-feedback"></label>
-                                <div class="col-sm-4">
-                                    <button type="submit" class="btn btn-primary">Reserve</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <footer class="footer">
         <div class="container">
@@ -216,43 +266,6 @@
             </div>
         </div>
     </footer>
-
-    <div id="loginModal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" role="content">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-sm-4">
-                                <label class="sr-only" for="email">Email</label>
-                                <input class="form-control form-control-sm mr-1" type="text" name="email" id="email" placeholder="Enter email">
-                            </div>
-                            <div class="form-group col-sm-4">
-                                <label class="sr-only" for="password">Email</label>
-                                <input class="form-control form-control-sm mr-1" type="password" name="password" id="password" placeholder="Password">
-                            </div>
-                            <div class="col-sm-auto">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox">
-                                    <label class="form-check-label" for="password">Remember me</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign In</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
